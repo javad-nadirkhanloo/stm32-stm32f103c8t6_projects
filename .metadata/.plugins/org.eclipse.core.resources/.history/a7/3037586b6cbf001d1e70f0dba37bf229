@@ -1,0 +1,35 @@
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+
+#include "main.h"
+
+extern UART_HandleTypeDef huart1;
+
+/*
+ * @brief UART1 GPIO configuration
+ */
+void uart_uart1_gpio_config(void);
+
+
+/*
+ * @brief UART1 Peripheral configuration
+ */
+void uart_uart1_config(void)
+{
+  __HAL_RCC_USART1_CLK_ENABLE();
+
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  HAL_UART_Init(&huart1)
+
+
+}
+
+#endif

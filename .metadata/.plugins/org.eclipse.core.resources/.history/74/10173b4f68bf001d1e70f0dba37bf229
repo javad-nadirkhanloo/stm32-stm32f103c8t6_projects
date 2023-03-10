@@ -1,0 +1,9 @@
+#ifndef RCC_H
+#define RCC_H
+
+/*
+ * @brief rcc system clock configuration
+ */
+bool rcc_system_clock_config(void);
+
+#endif

@@ -6,16 +6,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../core/src/main.c \
+../core/src/printf_redirect.c \
 ../core/src/stm32f1xx_it.c \
 ../core/src/system_stm32f1xx.c 
 
 OBJS += \
 ./core/src/main.o \
+./core/src/printf_redirect.o \
 ./core/src/stm32f1xx_it.o \
 ./core/src/system_stm32f1xx.o 
 
 C_DEPS += \
 ./core/src/main.d \
+./core/src/printf_redirect.d \
 ./core/src/stm32f1xx_it.d \
 ./core/src/system_stm32f1xx.d 
 
@@ -27,7 +30,7 @@ core/src/%.o core/src/%.su core/src/%.cyclo: ../core/src/%.c core/src/subdir.mk
 clean: clean-core-2f-src
 
 clean-core-2f-src:
-	-$(RM) ./core/src/main.cyclo ./core/src/main.d ./core/src/main.o ./core/src/main.su ./core/src/stm32f1xx_it.cyclo ./core/src/stm32f1xx_it.d ./core/src/stm32f1xx_it.o ./core/src/stm32f1xx_it.su ./core/src/system_stm32f1xx.cyclo ./core/src/system_stm32f1xx.d ./core/src/system_stm32f1xx.o ./core/src/system_stm32f1xx.su
+	-$(RM) ./core/src/main.cyclo ./core/src/main.d ./core/src/main.o ./core/src/main.su ./core/src/printf_redirect.cyclo ./core/src/printf_redirect.d ./core/src/printf_redirect.o ./core/src/printf_redirect.su ./core/src/stm32f1xx_it.cyclo ./core/src/stm32f1xx_it.d ./core/src/stm32f1xx_it.o ./core/src/stm32f1xx_it.su ./core/src/system_stm32f1xx.cyclo ./core/src/system_stm32f1xx.d ./core/src/system_stm32f1xx.o ./core/src/system_stm32f1xx.su
 
 .PHONY: clean-core-2f-src
 

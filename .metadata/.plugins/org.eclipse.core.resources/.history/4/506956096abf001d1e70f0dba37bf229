@@ -1,0 +1,23 @@
+#include "uart.h"
+
+/*
+ * @brief UART1 GPIO configuration
+ */
+void uart_uart1_gpio_config(void)
+{
+  // pa9  -> tx
+  // pa10 -> rx
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  GPIO_InitTypeDef gpio_init_struct;
+  gpio_init_struct.Pin = GPIO_PIN_9;
+  gpio_init_struct.Mode =
+}
+
+
+/*
+ * @brief UART1 Peripheral configuration
+ */
+void uart_uart1_config(void)
+{
+
+}

@@ -24,7 +24,9 @@ core/src/main.o: ../core/src/main.c \
  G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_tim.h \
  G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_tim_ex.h \
  G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_uart.h \
- G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_usart.h
+ G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_usart.h \
+ G:/stm32/stm32f103c8t6_hal/peripherals/inc/rcc.h \
+ G:/stm32/stm32f103c8t6_hal/peripherals/inc/uart.h
 G:/stm32/stm32f103c8t6_hal/core/inc/main.h:
 G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal.h:
 G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_conf.h:
@@ -51,3 +53,5 @@ G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_tim.h:
 G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_tim_ex.h:
 G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_uart.h:
 G:/stm32/stm32f103c8t6_hal/hal/stm32f1xx_hal_driver/inc/stm32f1xx_hal_usart.h:
+G:/stm32/stm32f103c8t6_hal/peripherals/inc/rcc.h:
+G:/stm32/stm32f103c8t6_hal/peripherals/inc/uart.h:

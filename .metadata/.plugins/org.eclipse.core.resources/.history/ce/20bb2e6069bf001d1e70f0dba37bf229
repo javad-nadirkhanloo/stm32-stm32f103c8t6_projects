@@ -1,0 +1,18 @@
+#include "uart.h"
+
+/*
+ * @brief UART1 GPIO configuration
+ */
+void uart_uart1_gpio_config(void)
+{
+
+}
+
+
+/*
+ * @brief UART1 Peripheral configuration
+ */
+void uart_uart1_config(void)
+{
+
+}

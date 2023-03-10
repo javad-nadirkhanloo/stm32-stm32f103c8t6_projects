@@ -10,6 +10,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include startup/subdir.mk
+-include peripherals/src/subdir.mk
 -include hal/stm32f1xx_hal_driver/src/subdir.mk
 -include core/src/subdir.mk
 -include objects.mk
@@ -52,6 +53,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 stm32f103c8t6_hal.list \
 
+OBJCOPY_HEX += \
+stm32f103c8t6_hal.hex \
+
 
 # All Target
 all: main-build
@@ -61,7 +65,7 @@ main-build: stm32f103c8t6_hal.elf secondary-outputs
 
 # Tool invocations
 stm32f103c8t6_hal.elf stm32f103c8t6_hal.map: $(OBJS) $(USER_OBJS) G:\stm32\stm32f103c8t6_hal\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32f103c8t6_hal.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"G:\stm32\stm32f103c8t6_hal\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f103c8t6_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "stm32f103c8t6_hal.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"G:\stm32\stm32f103c8t6_hal\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f103c8t6_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,12 +79,17 @@ stm32f103c8t6_hal.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEP
 	@echo 'Finished building: $@'
 	@echo ' '
 
+stm32f103c8t6_hal.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "stm32f103c8t6_hal.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout stm32f103c8t6_hal.elf stm32f103c8t6_hal.list stm32f103c8t6_hal.map
+	-$(RM) default.size.stdout stm32f103c8t6_hal.elf stm32f103c8t6_hal.hex stm32f103c8t6_hal.list stm32f103c8t6_hal.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

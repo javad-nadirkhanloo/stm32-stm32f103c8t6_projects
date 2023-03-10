@@ -1,0 +1,2 @@
+../peripherals/src/uart.c:8:6:uart_uart1_gpio_config	32	static
+../peripherals/src/uart.c:31:6:uart_uart1_config	16	static

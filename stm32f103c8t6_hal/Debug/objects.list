@@ -1,4 +1,5 @@
 "./core/src/main.o"
+"./core/src/printf_redirect.o"
 "./core/src/stm32f1xx_it.o"
 "./core/src/system_stm32f1xx.o"
 "./hal/stm32f1xx_hal_driver/src/stm32f1xx_hal.o"
@@ -16,4 +17,6 @@
 "./hal/stm32f1xx_hal_driver/src/stm32f1xx_hal_tim_ex.o"
 "./hal/stm32f1xx_hal_driver/src/stm32f1xx_hal_uart.o"
 "./hal/stm32f1xx_hal_driver/src/stm32f1xx_hal_usart.o"
+"./peripherals/src/rcc.o"
+"./peripherals/src/uart.o"
 "./startup/startup_stm32f103xb.o"

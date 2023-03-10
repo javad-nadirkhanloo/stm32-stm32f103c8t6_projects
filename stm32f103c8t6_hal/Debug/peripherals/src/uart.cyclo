@@ -1,0 +1,2 @@
+uart.c:8:6:uart_uart1_gpio_config	1
+uart.c:31:6:uart_uart1_config	2

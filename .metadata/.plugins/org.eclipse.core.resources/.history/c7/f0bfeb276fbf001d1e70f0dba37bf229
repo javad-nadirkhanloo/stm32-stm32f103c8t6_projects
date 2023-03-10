@@ -1,0 +1,20 @@
+#include "main.h"
+#include "rcc.h"
+
+int main(void)
+{
+  HAL_Init();
+  rcc_system_clock_config();
+
+  // uart
+  uart_uart1_gpio_config();
+  uart_uart1_config();
+
+  printf("program is string...\r\n");
+  uint8_t counter = 0;
+
+  while (1)
+  {
+    printf("counter : %d\r\n", counter++);
+  }
+}

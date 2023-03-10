@@ -1,0 +1,17 @@
+#include "main.h"
+#include "rcc.h"
+
+int main(void)
+{
+  HAL_Init();
+  rcc_system_clock_config();
+
+  // uart
+  uart_uart1_gpio_config();
+  uart_uart1_config();
+
+
+  while (1)
+  {
+  }
+}

@@ -1,0 +1,22 @@
+#include "rcc.h"
+
+/*
+ * @brief rcc system clock configuration
+ */
+void rcc_system_clock_config(void)
+{
+    // clock configuration parameters
+    // hse = 8MHz
+    // pll_m = 9
+    // usb prescaler = 1.5
+    // ahb prescaler = 1
+    // cortext prescaler = 1
+    // --> system clock = 72MHz
+
+    // apb1 prescaler = 2 => 36MHz
+    // apb2 prescaler = 1 => 72MHz
+    // adc prescaler = 6 => 12MHz
+
+    RCC_OscInitTypeDef osc_init_struct = {0};
+
+}

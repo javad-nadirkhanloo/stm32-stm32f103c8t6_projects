@@ -1,10 +1,19 @@
-20:00:01 **** Incremental Build of configuration Debug for project stm32f103c8t6_hal ****
+21:53:21 **** Incremental Build of configuration Debug for project stm32f103c8t6_hal ****
 make -j4 all 
+arm-none-eabi-gcc -o "stm32f103c8t6_hal.elf" @"objects.list"   -mcpu=cortex-m3 -T"G:\stm32\stm32f103c8t6_hal\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f103c8t6_hal.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f103c8t6_hal.elf
+ 
 arm-none-eabi-size   stm32f103c8t6_hal.elf 
+arm-none-eabi-objdump -h -S  stm32f103c8t6_hal.elf  > "stm32f103c8t6_hal.list"
+arm-none-eabi-objcopy  -O ihex  stm32f103c8t6_hal.elf  "stm32f103c8t6_hal.hex"
    text	   data	    bss	    dec	    hex	filename
-   1184	     20	   1572	   2776	    ad8	stm32f103c8t6_hal.elf
+  20228	    484	   1660	  22372	   5764	stm32f103c8t6_hal.elf
 Finished building: default.size.stdout
  
+Finished building: stm32f103c8t6_hal.list
+ 
+Finished building: stm32f103c8t6_hal.hex
+ 
 
-20:00:01 Build Finished. 0 errors, 0 warnings. (took 306ms)
+21:53:22 Build Finished. 0 errors, 0 warnings. (took 1s.446ms)
 
